@@ -23,6 +23,7 @@ float32: precision is 7 digits after the comma
 <br>
 float64: precision is 16 digits after the comma
 <img title="a title" alt="Alt text" src="images/float.png">
+
 - **uintptr:** is a large integer with size 8 bytes representing the address
 - **bool:** has two values, true and false. Size of bool is 1 byte. If the declaration does not assign a value, the default is false
 
