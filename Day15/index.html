@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Learn HTTP</title>
+        <link rel="stylesheet" href="/assets/style.css">
+    </head>
+    <body>
+        <h1>Learn How to a Website work</h1>
+        <header>
+        <a class="logo" href="/">News Demo</a>
+        <form action="/search" method="GET">
+          <input
+            autofocus
+            class="search-input"
+            placeholder="Enter a string"
+            type="search"
+            name="q"
+          />
+        </form>
+        <a
+          href="https://github.com/freshman-tech/news"
+          class="button github-button"
+          >View on Github</a
+        >
+        <ul class="search-results">
+          <!-- prettier-ignore -->
+          {{ range. }}
+          <li class="news-article">
+            <div>
+                <h3 class="title">{{.Name }}</h3>
+              <p class="description">{{ .Age }} {{.Job}} {{.Interest}}</p>
+              <div class="metadata">
+                <p class="source">{{ .Address }}</p>
+              </div>
+            </div>
+          </li>
+          <!-- prettier-ignore -->
+          {{ end }}
+        </ul>
+      </header>
+        
+    </body>
+</html>

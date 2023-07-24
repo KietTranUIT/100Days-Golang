@@ -1,0 +1,36 @@
+.User {
+    height: 50px;
+    width: 300px;
+    border-radius: 50px;
+    border: 1px solid black
+}
+
+.search-results {
+    list-style: none;
+  }
+  
+  .news-article {
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: 30px;
+    border: 1px solid black;
+    padding: 15px;
+    border-radius: 4px;
+    justify-content: space-between;
+  }
+
+  .title {
+    margin-bottom: 15px;
+  }
+
+  .description {
+    color: var(--dark-grey);
+    margin-bottom: 15px;
+  }
+  
+  .metadata {
+    display: flex;
+    color: var(--dark-green);
+    font-size: 14px;
+  }
+  
