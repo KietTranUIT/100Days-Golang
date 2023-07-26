@@ -1,8 +1,8 @@
 package main
 
 import (
-	"fmt"
 	"bufio"
+	"fmt"
 	"os"
 )
 
@@ -17,7 +17,7 @@ func Search(begin, end int, s string, char byte) int {
 		if char == s[i] {
 			return i
 		}
-    }
+	}
 	return -1
 }
 
@@ -29,7 +29,7 @@ func lengthOfLongestSubstring(s string) int {
 		return 0
 	}
 
-	for i:=1; i<s_len; i++ {
+	for i := 1; i < s_len; i++ {
 		check := Search(j, i, s, s[i])
 
 		if check != -1 {
@@ -37,8 +37,8 @@ func lengthOfLongestSubstring(s string) int {
 			continue
 		}
 
-		if len(s[j:i + 1]) > SubMax {
-			SubMax = len(s[j:i + 1])
+		if len(s[j:i+1]) > SubMax {
+			SubMax = len(s[j : i+1])
 		}
 	}
 
