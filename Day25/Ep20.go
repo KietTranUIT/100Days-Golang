@@ -19,14 +19,23 @@ func isValid(s string) bool {
 		}
 
 		if s[i] == ')' {
+			if top == -1 {
+				return false
+			}
 			if stack[top] != '(' {
 				return false
 			}
 		} else if s[i] == ']' {
+			if top == -1 {
+				return false
+			}
 			if stack[top] != '[' {
 				return false
 			}
 		} else {
+			if top == -1 {
+				return false
+			}
 			if stack[top] != '{' {
 				return false
 			}
@@ -34,6 +43,10 @@ func isValid(s string) bool {
 
 		top--
 		stack = pop(stack)
+	}
+
+	if top != -1 {
+		return false
 	}
 	return true
 }
