@@ -32,29 +32,22 @@ func Push(new_node *ListNode, ls List) List {
 	return ls
 }
 
-func swapNodes(currentNode *ListNode, preNode *ListNode, count int) *ListNode {
-	if currentNode == nil {
-		return nil
-	}
-	count++
-
-	if count%2 == 0 {
-		fmt.Println(currentNode.val)
-		preNode.Next = swapNodes(currentNode.Next, currentNode, count)
-		currentNode.Next = preNode
-		fmt.Println(preNode.val, currentNode.val)
-		return currentNode
-	}
-
-	fmt.Println("test: ", currentNode.val, currentNode.Next.val)
-
-	currentNode = swapNodes(currentNode.Next, currentNode, count)
-	return currentNode
-
+func swapData(a, b int) (int, int) {
+	return b, a
 }
 
 func swapPairs(head *ListNode) *ListNode {
-	swapNodes(head, nil, 0)
+	if head == nil {
+		return nil
+	}
+
+	if head.Next == nil {
+		return head
+	}
+
+	head.val, head.Next.val = swapData(head.val, head.Next.val)
+	fmt.Println("Test: ", head.val, head.Next.val)
+	head.Next.Next = swapPairs(head.Next.Next)
 	return head
 }
 
